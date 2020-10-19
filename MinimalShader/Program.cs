@@ -21,6 +21,7 @@ namespace Example
 
 			window.RenderFrame += Draw; // called once each frame; callback should contain drawing code
 			window.Run();
+			GL.DeleteProgram(shaderProgram);
 		}
 
 		const string vertexShaderSource = @"
