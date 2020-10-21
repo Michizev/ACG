@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Example</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;SOLUTION</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="content\shader.frag" />
+    <None Remove="content\shader.geom" />
+    <None Remove="content\shader.vert" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="content\shader.geom" />
+    <EmbeddedResource Include="content\shader.frag" />
+    <EmbeddedResource Include="content\shader.vert" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenTK.NetStandard" Version="1.0.5.22" />
+  </ItemGroup>
+</Project>

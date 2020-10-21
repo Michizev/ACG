@@ -9,7 +9,7 @@ namespace Example
 		{
 			var window = new GameWindow(512, 512); // window with size 512x512 pixel
 			var shaderProgram = ShaderTools.CreateShaderProgram(vertexShaderSource, fragmentShaderSource);
-			
+
 			void Draw(object sender, FrameEventArgs args)
 			{
 				//clear screen - what happens without?
@@ -24,7 +24,7 @@ namespace Example
 			GL.DeleteProgram(shaderProgram);
 		}
 
-		const string vertexShaderSource = @"
+		private const string vertexShaderSource = @"
 				#version 430 core
 				out vec3 pos;
 				void main() {
@@ -35,8 +35,7 @@ namespace Example
 					pos = vertices[gl_VertexID];
 					gl_Position = vec4(pos, 1.0);
 				}";
-
-		const string fragmentShaderSource = @"
+		private const string fragmentShaderSource = @"
 			#version 430 core
 			in vec3 pos;
 			out vec4 color;
