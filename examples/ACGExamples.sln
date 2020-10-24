@@ -1,4 +1,3 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30611.23
@@ -6,6 +5,8 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinimalShader", "MinimalShader\MinimalShader.csproj", "{BE248A6C-54C5-4650-8E0B-887F65BDE532}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Points2D", "Points2D\Points2D.csproj", "{C2A98EE1-1404-4A77-90E7-55EF54EB251B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mesh", "Mesh\Mesh.csproj", "{71336EAB-F2F0-41C5-8AB2-00CCE9498ED3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +22,10 @@ Global
 		{C2A98EE1-1404-4A77-90E7-55EF54EB251B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2A98EE1-1404-4A77-90E7-55EF54EB251B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2A98EE1-1404-4A77-90E7-55EF54EB251B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71336EAB-F2F0-41C5-8AB2-00CCE9498ED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71336EAB-F2F0-41C5-8AB2-00CCE9498ED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71336EAB-F2F0-41C5-8AB2-00CCE9498ED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71336EAB-F2F0-41C5-8AB2-00CCE9498ED3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

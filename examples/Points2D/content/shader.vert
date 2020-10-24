@@ -1,12 +1,11 @@
 ﻿#version 430 core
 uniform float time;
 
-in vec4 positionVelocity;
+in vec2 position;
+in vec2 velocity;
 
 out vec3 pos;
 void main() {
-	vec2 position = positionVelocity.xy;
-	vec2 velocity = positionVelocity.zw;
 	vec2 newPos = position + time * velocity;
 #ifdef SOLUTION
 	newPos = abs(mod(newPos + 3.0, 4.0) - 2.0) - 1.0;

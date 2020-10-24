@@ -9,24 +9,30 @@ namespace Example
 	{
 		private readonly MyPointSpriteShaderProgram shaderPointSprite;
 		private readonly Stopwatch time;
-		private readonly VertexArrayVector4 vertexArray;
+		private readonly VertexArray vertexArray;
 
 		public View()
 		{
 			shaderPointSprite = new MyPointSpriteShaderProgram();
 
+			const int pointCount = 500;
 			//generate starting positions and velocity array on CPU
 			var rnd = new Random(12);
 			float Rnd01() => (float)rnd.NextDouble();
 			float RndCoord() => (Rnd01() - 0.5f) * 2.0f;
 			float RndSpeed() => (Rnd01() - 0.5f) * 0.1f;
-			var positionVelocity = new Vector4[500];
-			for (int i = 0; i < positionVelocity.Length; ++i)
+			var position = new Vector2[pointCount];
+			var velocity = new Vector2[pointCount];
+			for (int i = 0; i < pointCount; ++i)
 			{
-				positionVelocity[i] = new Vector4(RndCoord(), RndCoord(), RndSpeed(), RndSpeed());
+				position[i] = new Vector2(RndCoord(), RndCoord());
+				velocity[i] = new Vector2(RndSpeed(), RndSpeed());
 			}
+
 			// copy position and velocity data to GPU
-			vertexArray = new VertexArrayVector4(PrimitiveType.Points, positionVelocity, shaderPointSprite.LocationPositionVelocity);
+			vertexArray = new VertexArray(PrimitiveType.Points);
+			vertexArray.AddAttribute(shaderPointSprite.LocationPosition, position, 2, VertexAttribPointerType.Float);
+			vertexArray.AddAttribute(shaderPointSprite.LocationVelocity, velocity, 2, VertexAttribPointerType.Float);
 
 			time = Stopwatch.StartNew();
 
@@ -43,7 +49,6 @@ namespace Example
 		internal void Draw()
 		{
 			GL.Clear(ClearBufferMask.ColorBufferBit);
-			////ATTENTION: always give the time as a float if the uniform in the shader is a float
 			shaderPointSprite.Activate((float)time.Elapsed.TotalSeconds, 0.07f);
 			vertexArray.Draw();
 		}

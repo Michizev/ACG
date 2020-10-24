@@ -10,10 +10,12 @@ namespace Example
 			_handle = ShaderTools.CreateShaderProgramFromRes("content.shader.vert", "content.shader.frag", "content.shader.geom");
 			_locTime = GL.GetUniformLocation(_handle, "time");
 			_locPointSize = GL.GetUniformLocation(_handle, "pointSize");
-			LocationPositionVelocity = GL.GetAttribLocation(_handle, "positionVelocity");
+			LocationPosition = GL.GetAttribLocation(_handle, "position");
+			LocationVelocity = GL.GetAttribLocation(_handle, "velocity");
 		}
 
-		public int LocationPositionVelocity { get; }
+		public int LocationPosition { get; }
+		public int LocationVelocity { get; }
 
 		public void Activate(float time, float pointSize = 0.1f)
 		{

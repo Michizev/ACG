@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Example</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;SOLUTION</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="content\shader.frag" />
+    <None Remove="content\shader.vert" />
+    <None Remove="content\suzanne.obj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="content\shader.frag" />
+    <EmbeddedResource Include="content\shader.vert" />
+    <EmbeddedResource Include="content\suzanne.obj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CjClutter.ObjLoader" Version="1.0.0" />
+    <PackageReference Include="OpenTK.NetStandard" Version="1.0.5.22" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="content\suzanne.obj" />
+  </ItemGroup>
+</Project>
