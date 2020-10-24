@@ -34,6 +34,7 @@ namespace Example
 			if (0 == array.Length) throw new ArgumentException("Empty attribute array");
 			if (perInstance)
 			{
+				if (1 != _instanceCount && array.Length != _instanceCount) throw new ArgumentException("Attribute arrays with different instance count given");
 				_instanceCount = array.Length;
 			}
 			else

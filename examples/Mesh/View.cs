@@ -59,7 +59,7 @@ namespace Example
 			var modelViewProjection = Matrix4.Identity;
 #if SOLUTION
 			var rotation = Matrix4.CreateRotationY((float)time.Elapsed.TotalSeconds);
-			var projection = Matrix4.CreateOrthographic(10, 10, -10, 10); // use a projection also for handedness change!
+			var projection = Matrix4.CreateOrthographic(15, 15, -15, 15); // use a projection also for handedness change!
 			modelViewProjection = rotation * projection;
 #endif
 			shaderProgram.Activate(modelViewProjection);
