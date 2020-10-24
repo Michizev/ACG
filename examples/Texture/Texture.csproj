@@ -11,19 +11,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="content\chalet.jpg" />
+    <None Remove="content\chalet.obj" />
     <None Remove="content\shader.frag" />
     <None Remove="content\shader.vert" />
-    <None Remove="content\suzanne.obj" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="content\chalet.jpg" />
+    <EmbeddedResource Include="content\chalet.obj" />
     <EmbeddedResource Include="content\shader.frag" />
     <EmbeddedResource Include="content\shader.vert" />
-    <EmbeddedResource Include="content\suzanne.obj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="CjClutter.ObjLoader" Version="1.0.0" />
+    <PackageReference Include="Magick.NET-Q8-AnyCPU" Version="7.22.0" />
     <PackageReference Include="OpenTK.NetStandard" Version="1.0.5.22" />
   </ItemGroup>
 
