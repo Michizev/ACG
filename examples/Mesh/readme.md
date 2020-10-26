@@ -7,14 +7,14 @@
 
 # To do
 1. Add mesh attributes to `vertexArray`.
-2. Make the model fit inside the view-port and rotate it around the y-axis.
-   - Use a perspective or orthogonal projection.
-3. Look at the code of `VertexArray.AddAttribute`. I added support for per instance attributes.
-4. Provide 500 values for `instancePosition` and use it in the vertex shader to position each instance.
-5. Make the instances rotate individually.
-6. let heads orbit each other -> binary head systems
-7. solar systems of heads
-8. Galaxies of solar systems
-9. The big head-bang theory...
-10. Load another obj file (only triangulated models).
-11. Can you create a wood?
+   - We use indexed drawing [glDrawElements](https://www.khronos.org/opengl/wiki/GLAPI/glDrawElements)
+   - And store the index data in an `ElementArrayBuffer`.
+2. Make the model rotate around the y-axis.
+4. Look at the code of `VertexArray.AddAttribute`. I added support for per instance attributes with
+   - [VertexAttribDivisor](https://www.khronos.org/opengl/wiki/GLAPI/glVertexAttribDivisor)
+   - Drawing is now done with [glDrawElementsInstanced](https://www.khronos.org/opengl/wiki/GLAPI/glDrawElementsInstanced)
+   - extension: [ARB_vertex_attrib_binding](https://www.khronos.org/registry/OpenGL/extensions/ARB/ARB_vertex_attrib_binding.txt)
+5. Provide 500 values for `instancePosition` and use it in the vertex shader to position each instance.
+6. Make the instances rotate individually.
+7. Load another obj file (only triangulated models).
+8. Create an abstract scene using obj loading and instancing.

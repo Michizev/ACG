@@ -15,6 +15,7 @@ namespace Example
 			LocationPosition = GL.GetAttribLocation(_handle, "position");
 			LocationNormal = GL.GetAttribLocation(_handle, "normal");
 			LocationTexCoord = GL.GetAttribLocation(_handle, "texCoord");
+			LocationTime = GL.GetUniformLocation(_handle, "time");
 #endif
 		}
 
@@ -24,12 +25,14 @@ namespace Example
 		public int LocationPosition { get; }
 		public int LocationNormal { get; }
 		public int LocationTexCoord { get; }
+		public int LocationTime { get; }
 #endif
 
-		public void Activate(Matrix4 modelViewProjection)
+		public void Activate(Matrix4 modelViewProjection, float time)
 		{
 			GL.UseProgram(_handle);
 #if SOLUTION
+			GL.Uniform1(LocationTime, time);
 			GL.UniformMatrix4(LocationModelViewProjection, false, ref modelViewProjection);
 #endif
 		}

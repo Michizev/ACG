@@ -56,13 +56,13 @@ namespace Example
 		internal void Draw()
 		{
 			GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
-			var modelViewProjection = Matrix4.Identity;
+			var currentTime = (float)time.Elapsed.TotalSeconds;
+			var modelViewProjection = Matrix4.CreateOrthographic(15, 15, -15, 15); // use a projection also for handedness change!
 #if SOLUTION
-			var rotation = Matrix4.CreateRotationY((float)time.Elapsed.TotalSeconds);
-			var projection = Matrix4.CreateOrthographic(15, 15, -15, 15); // use a projection also for handedness change!
-			modelViewProjection = rotation * projection;
+			var rotation = Matrix4.CreateRotationY(currentTime);
+			modelViewProjection = rotation * modelViewProjection;
 #endif
-			shaderProgram.Activate(modelViewProjection);
+			shaderProgram.Activate(modelViewProjection, currentTime);
 			vertexArray.Draw();
 		}
 
