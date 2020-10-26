@@ -16,12 +16,11 @@ namespace Example
 			shaderProgram = new MyMeshShaderProgram();
 			var mesh = MeshTools.LoadFromResource("content.suzanne.obj");
 
-			// copy position and velocity data to GPU
+			// copy data to GPU
 			vertexArray = new VertexArray(PrimitiveType.Triangles);
 			vertexArray.AddIndices(mesh.ID.ToArray());
 #if SOLUTION
 			const int count = 500;
-			//generate starting positions and velocity array on CPU
 			var rnd = new Random(12);
 			float Rnd01() => (float)rnd.NextDouble();
 			float RndCoord() => (Rnd01() - 0.5f) * 10.0f;

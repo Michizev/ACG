@@ -50,7 +50,7 @@ namespace Example
 		{
 			var shader = GL.CreateShader(type);
 #if SOLUTION
-			shaderSource = shaderSource.Replace("#ifdef SOLUTION", "#if 1");
+			shaderSource = shaderSource.Replace("#ifdef " + "SOLUTION", "#if 1");
 #endif
 			GL.ShaderSource(shader, shaderSource);
 			GL.CompileShader(shader);
