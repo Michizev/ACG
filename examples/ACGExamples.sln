@@ -10,6 +10,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mesh", "Mesh\Mesh.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Texture", "Texture\Texture.csproj", "{00475697-8D59-4858-8546-9837DE025A5A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Camera", "Camera\Camera.csproj", "{060FBCD5-C2AA-485C-90B8-358E6D799878}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{00475697-8D59-4858-8546-9837DE025A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00475697-8D59-4858-8546-9837DE025A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00475697-8D59-4858-8546-9837DE025A5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{060FBCD5-C2AA-485C-90B8-358E6D799878}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{060FBCD5-C2AA-485C-90B8-358E6D799878}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{060FBCD5-C2AA-485C-90B8-358E6D799878}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{060FBCD5-C2AA-485C-90B8-358E6D799878}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
